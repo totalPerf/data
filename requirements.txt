@@ -1,3 +1,4 @@
 oracledb
 matplotlib
 prophet
+cx_Oracle
