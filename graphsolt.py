@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#import data as d
+import cx_Oracle
 import pandas as pd
 import oracledb
 import numpy as np
@@ -18,8 +18,8 @@ HOST="10.180.39.252"
 PORT=1521
 SERVICE="PRFORMNC"
 
-dsn_tns = oracledb.makedsn(HOST, PORT, service_name=SERVICE) 
-conn = oracledb.connect(user=USERNAME, password=PASSWORD, dsn=dsn_tns)
+dsn_tns = cx_Oracle.makedsn(HOST, PORT, service_name=SERVICE) 
+conn = cx_Oracle.connect(user=USERNAME, password=PASSWORD, dsn=dsn_tns)
 
 def querys(querydata): 
     c = conn.cursor()
