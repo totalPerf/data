@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import data as d
+#import data as d
 import pandas as pd
 import oracledb
 import numpy as np
@@ -10,8 +10,16 @@ import datetime as dt
 from prophet import Prophet
 import streamlit as st
 
-dsn_tns = oracledb.makedsn(d.HOST, d.PORT, service_name=d.SERVICE) 
-conn = oracledb.connect(user=d.USERNAME, password=d.PASSWORD, dsn=dsn_tns)
+USERNAME="prformance_datascience"
+USERALGO="prformance_iptv"
+PASSALGO="Prformance_Iptv"
+PASSWORD="Data#Science"
+HOST="10.180.39.252"
+PORT=1521
+SERVICE="PRFORMNC"
+
+dsn_tns = oracledb.makedsn(HOST, PORT, service_name=SERVICE) 
+conn = oracledb.connect(user=USERNAME, password=PASSWORD, dsn=dsn_tns)
 
 def querys(querydata): 
     c = conn.cursor()
